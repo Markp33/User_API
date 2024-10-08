@@ -38,3 +38,10 @@ app.get('/', (req, res) => {
       }
     });
   });
+
+  // Start de server met localhost
+const PORT = 5173; 
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`); 
+});
+//to see the json, dowload insomnia and use this localhost.
