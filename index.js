@@ -21,3 +21,20 @@ db.connect(err => {
       console.log('Connected to the database!');
     }
   });
+
+  // dit is een welcome messege
+app.get('/', (req, res) => {
+    res.send('Welcome to API!!!'); 
+  });
+  
+  // GET alle users
+  app.get('/users', (req, res) => {
+    const query = 'SELECT * FROM users'; 
+    db.query(query, (err, results) => {
+      if (err) {
+        res.status(500).json({ error: 'Something went wrong!' });  //error message
+      } else {
+        res.json(results); 
+      }
+    });
+  });
