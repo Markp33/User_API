@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
     const query = 'SELECT * FROM users'; 
     db.query(query, (err, results) => {
       if (err) {
-        res.status(500).json({ error: 'Something went wrong!' });  //error message
+        res.status(500).json({ error: 'Something went wrong!'});  //error message
       } else {
         res.json(results); 
       }
